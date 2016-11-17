@@ -1,0 +1,136 @@
+:root{
+    --config-panel-bg-color: #f0f2f5;
+    --stimbar-panel-bg-color: #4c5660;
+    --navbar-panel-bg-color: #39414a;
+    --navbar-panel-border-color: #2b3d44;
+    --canvas-panel-container-bg-color: #39414a;
+    --canvas-panel-bg-color: #ffffff;
+    --postsuite-panel-bg-color: #4c5660;
+}
+
+body {
+    font: 16px Helvetica;
+    background: #999999;
+    margin:0px;
+    padding:0px;
+}
+
+
+
+
+
+
+#main {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+
+    /*SUBPANNEL*/
+    /*display: flex;*/
+    /*flex-flow: column;*/
+}
+
+#main > header {
+    position:absolute;
+    color:white;
+    margin: 0px;
+    padding: 0px;
+    width:100vw;
+    height: 5vh;
+    background-color: var(--stimbar-panel-bg-color);
+    /*flex: 1 1 6%;*/
+    /*order: 1;*/
+}
+
+
+
+
+
+#main > nav {
+    position:absolute;
+    color:white;
+    margin: 0px;
+    padding: 0px;
+    background: var(--navbar-panel-bg-color);
+    border-right: 1px solid var(--navbar-panel-border-color);
+    width:17vw;
+    height:95vh;
+    top:5vh;
+    /*flex: 1 1 17%;*/
+    /*order: 1;*/
+}
+
+
+#main > #canvas {
+
+    border: 2vw solid var(--canvas-panel-container-bg-color);
+    position:absolute; !important
+    margin: 0px;
+    padding: 0px;
+    height: 60vh;
+    width:60vw;
+    left:17vw;
+    top:5vh;
+    background-color:white;
+
+
+    background-image:
+    linear-gradient(45deg, lightGray 25%, transparent 25%),
+    linear-gradient(45deg, white 25%, transparent 25%),
+    linear-gradient(45deg, lightGray 25%, transparent 25%),
+    linear-gradient(45deg, white 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, lightGray 75%),
+    linear-gradient(45deg, transparent 75%, white 75%),
+    linear-gradient(45deg, transparent 75%, lightGray 75%),
+    linear-gradient(45deg, transparent 75%, white 75%);
+    background-size:20px 20px;
+    background-position:0 0, 10px 0, 10px -10px, 0px 10px;
+
+}
+
+#main > aside {
+    margin: 0px;
+    padding: 0px;
+    background: var(--config-panel-bg-color);
+    position:absolute;
+    left: 81vw;
+    width: 19vw;
+    top:5vh;
+    height:95vh;
+    /*flex: 1 1 21%;*/
+    /*order: 3;*/
+}
+
+
+
+
+
+
+
+
+
+#main > #postsuite {
+    position:absolute;
+    margin: 0px;
+    padding: 0px;
+    background: var(--postsuite-panel-bg-color);
+    top:72vh;
+    height:28vh;
+    left:17vw;
+    width:64vw;
+    /*flex: 1 0 10%;*/
+    /*order: 2;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+

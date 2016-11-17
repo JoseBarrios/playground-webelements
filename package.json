@@ -1,0 +1,28 @@
+{
+  "name": "@cognilab/cl-views",
+  "version": "1.0.0",
+  "description": "A collection of views for Cognilab elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cognilab/CLViews.git"
+  },
+  "author": "JoseBarrios",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Cognilab/CLViews/issues"
+  },
+  "homepage": "https://github.com/Cognilab/CLViews#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "reload": "^1.0.1",
+    "watch": "^1.0.1"
+  }
+}

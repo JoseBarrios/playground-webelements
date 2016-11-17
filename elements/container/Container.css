@@ -1,0 +1,278 @@
+/*TODO: LINEAR GRADIANT*/
+
+#container {
+    --container-border-color: white;
+    --container-border-width: .1em;
+    --handle-display: none;
+    --handle-border-width: .1em;
+    --handle-border-height: .1em;
+    --handle-width: .4em;
+    --handle-height: .4em;
+    --handle-border-color: black;
+    --handle-bg-color: white;
+
+    --handle-actual-width: calc(var(--handle-width) + var(--handle-border-width) * 2);
+    --handle-actual-height: calc(var(--handle-height) + var(--handle-border-height) * 2);
+
+    --ruler-color: #eabf00;
+
+    --edit-box-border-color: #92b2fe;
+    --edit-box-border-width: .05em;
+
+    --background-color: lightBlue;
+    --background-color: rgba(255,255,255,.5);
+
+    /*margin:0px;*/
+    /*padding:0px;*/
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    /*background-color:red;*/
+}
+
+#container:hover {
+    --container-border-color: #d0d0d0;
+    --container-border-width: .1em;
+}
+
+
+/*#container:focus {*/
+    /*--handle-display: inline;*/
+    /*--container-border-color: #97b8fc;*/
+    /*--container-border-width: 1px;*/
+    /*background-color:red;*/
+/*}*/
+/*#container.selected {*/
+    /*--handle-display: inline;*/
+    /*--container-border-color: #97b8fc;*/
+/*}*/
+
+
+
+
+#backgroundLayer {
+    position:absolute;
+    /*background-color: var(--background-color);*/
+    background-color:white;
+    opacity:1;
+    /*background-color: red;*/
+    /*transition: opacity .25s ease-out;*/
+    width: calc(100% + var(--handle-actual-height) - var(--handle-border-width) * 2);
+    height: calc(100% + var(--handle-actual-height) - var(--handle-border-height) * 2);
+    top: calc(0% - var(--handle-actual-height)/2 - var(--handle-border-width));
+    left: calc(0% - var(--handle-actual-height)/2);
+    /*top:20px;*/
+    /*left:20px;*/
+    /*opacity: 0.5;*/
+}
+#backgroundLayer:hover {
+    /*opacity: 1;*/
+}
+
+
+
+
+
+
+
+
+
+
+#contentLayer{
+    position:absolute;
+    width: calc(100% - var(--handle-width) - var(--handle-border-width));
+    height: calc(100% - var(--handle-width) - var(--handle-border-height));
+    padding: calc(var(--handle-width)/2);
+    /*border: var(--container-border-width) solid var(--container-border-color);*/
+    pointer-events : none;
+    transition: border .25s ease-out;
+    /*background-color:lightGray;*/
+    /*top:40px;*/
+    /*left:40px;*/
+}
+
+
+
+
+
+
+
+
+
+
+#editLayer {
+    position:absolute;
+    width:100%;
+    height:100%;
+    /*background-color:white;*/
+}
+/*OVERLAY, INDEPENDENT LAYER*/
+
+.background {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:white;
+    /*transform: scale(2,2);*/
+    /*opacity: .85;*/
+}
+.background {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:white;
+    /*transform: scale(2,2);*/
+    /*opacity: .85;*/
+}
+
+
+
+
+
+.box {
+    position:absolute;
+    width:calc(100% + var(--handle-actual-width) - var(--handle-border-width));
+    height:calc(100% + var(--handle-actual-width) - var(--handle-border-width));
+    top: calc(0% - var(--handle-actual-width)/2 - var(--handle-border-width)/2);
+    left: calc(0% - var(--handle-actual-width)/2);
+    border: var(--container-border-width) solid var(--edit-box-border-color);
+}
+
+
+.border {
+    position:absolute;
+    height:100%;
+    height:100%;
+}
+.border.n {
+    top: calc(0% - var(--handle-actual-height) + var(--handle-border-width));
+    height: calc(var(--handle-actual-width) - var(--handle-border-width));
+    width:100%;
+    background: linear-gradient(to bottom, transparent 50%, white 50%);
+}
+.border.e {
+    left: 100%;
+    width: calc(var(--handle-actual-width) - var(--handle-border-width));
+    background: linear-gradient(to left, transparent 50%, white 50%);
+}
+.border.s {
+    top: calc(100%);
+    height: calc(var(--handle-actual-width) - var(--handle-border-width));
+    width:100%;
+    background: linear-gradient(to top, transparent 50%, white 50%);
+}
+.border.w {
+    left: calc(0% - var(--handle-actual-height) + var(--handle-border-width));
+    width: calc(var(--handle-actual-width) - var(--handle-border-width));
+    background: linear-gradient(to right, transparent 50%, white 50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+#ruler {
+    pointer-events : none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity: 0.5;
+    /*transform: scale(2,2);*/
+    /*background-color:green;*/
+}
+.circle {
+    position:absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color:red;
+    pointer-events : none;
+    /*shape-outside: circle(100px at 50% 50%);*/
+    /*shape-outside: border-box;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.quarter {
+    /*background:*/
+    /*linear-gradient(to top, transparent calc(50% - var(--handle-border-width)/2), black calc(50% - var(--handle-border-width)/2), black calc(50% + var(--handle-border-width)/2), transparent calc(50% + var(--handle-border-width)/2)),*/
+    /*linear-gradient(to left, transparent calc(50% - var(--handle-border-width)/2), black calc(50% - var(--handle-border-width)/2), black calc(50% + var(--handle-border-width)/2), transparent calc(50% + var(--handle-border-width)/2));*/
+}
+.handle {
+    position:absolute;
+    border: var(--handle-border-width) solid var(--handle-border-color);
+    width: var(--handle-width);
+    height: var(--handle-width);
+    background-color: var(--handle-bg-color);
+    /*DEFAULTS: .n, .e, .s, .w   */
+    top: calc(50% - var(--handle-actual-height)/2 + var(--handle-border-height)/2);
+    left: calc(50% - var(--handle-actual-width)/2 + var(--handle-border-width)/2);
+    /*z-index:5;*/
+}
+.handle.n {
+    cursor: ns-resize;
+    top: calc(0% - var(--handle-actual-height) + var(--handle-border-height));
+}
+.handle.e {
+    cursor: ew-resize;
+    left: 100%;;
+}
+.handle.s {
+    cursor: ns-resize;
+    top: 100%;
+}
+.handle.w {
+    cursor: ew-resize;
+    left: calc(0% - var(--handle-actual-height) + var(--handle-border-width));
+}
+.n.w, .s.e { cursor: nwse-resize; }
+.n.e, .s.w { cursor:nesw-resize; }
+
+
+
+
+
+
+/*MIGHT MAKE IT ITS OWN ELEMENT*/
+#info {
+    display:none;
+    position:absolute;
+    background-color:#212121;
+    color:#FFFFFF;
+    border-radius:0.4em;
+    padding:0.4em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    position:absolute;
+    font-size:0.8em;
+    white-space: nowrap;
+    z-index:900;
+}
+
+#info.active { display: inline }
+
+

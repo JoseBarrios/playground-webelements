@@ -1,0 +1,40 @@
+<template id="cogni-container-template">
+    <link rel="stylesheet" type="text/css" href="container/Container.css">
+    <!--DISPLAYS RESIZE AND DRAG INFO-->
+    <div id="info"></div>
+
+    <div id="container" draggable ="true">
+        <!--<div id="backgroundLayer" class="ratio-rulers"</div>-->
+        <div id="editLayer">
+            <div class="background"></div>
+            <div class="box"></div>
+            <div class="border n "></div>
+            <div class="border e"></div>
+            <div class="border w"></div>
+            <div class="border s"></div>
+            <div class="handle n w quarter"></div>
+            <div class="handle n quarter"></div>
+            <div class="handle n e quarter"></div>
+            <div class="handle e quarter"></div>
+            <div class="handle s w quarter"></div>
+            <div class="handle s quarter"></div>
+            <div class="handle s e quarter"></div>
+            <div class="handle w quarter"></div>
+
+
+        </div>
+        <!--/editLayer-->
+
+        <div id="contentLayer" name="content">
+            content
+        </div>
+        <!--/contentLayer-->
+
+    </div>
+    <!--/container-->
+
+
+
+    <div id="ruler"> <div class="circle"></div> </div><!--/ruler-->
+
+</template>
